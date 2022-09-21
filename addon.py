@@ -35,7 +35,7 @@ def index():
 def index_source(url,name,icon):
     log('path: [/stream/'+url+'/'+name+'/'+icon+']')
     log('url:'+url)
-    source=openUrl(url)
+    source=openUrl(url + '?player=2')
     match=Compile('file:"(.+?)"').findall(source)
     item={'label':name,'path':match[0]}
     plugin.play_video(item)
